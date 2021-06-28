@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="jumbotron mt-5">
+    <a class="nav-link backbtnwidth" routerLink="/admin">Go to Home page</a>
+    <a class="nav-link forwardbtnwidth" routerLink="/register">Add User</a>
+    <div class="col-sm-8 mx-auto">
+      <h1 class="text-center">User Management</h1>
+    </div>
+    <table class="table col-md-12 mx-auto">
+      <thead>
+        <tr>
+          <td class="tableheader">First Name</td>
+          <td class="tableheader">Last Name</td>
+          <td class="tableheader">User Type</td>
+          <td class="tableheader">Email</td>
+          <td class="tableheader">Password</td>
+          <td class="tableheader">Status</td>
+          <td class="tableheader">Edit</td>
+          <td class="tableheader">Delete</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let userdata of alluserdatas">
+          <td><input id="first_{{userdata._id}}" type="text" class="form-control" value="{{userdata.first_name}}" /></td>
+          <td><input id="last_{{userdata._id}}" type="text" class="form-control" value="{{userdata.last_name}}" /></td>
+          <td><select id="type_{{userdata._id}}" class="form-control" value="{{userdata.user_type}}">
+            <option value="admin">Admin</option>
+            <option value="consultant">Consultant</option>
+            <option value="customer">Customer</option>
+          </select></td>
+          <td><input id="email_{{userdata._id}}" type="text" class="form-control" value="{{userdata.email}}" /></td>
+          <td><input id="password_{{userdata._id}}" type="text" class="form-control" value="{{userdata.password}}" /></td>
+          <td><select id="status_{{userdata._id}}" class="form-control" value="{{userdata.status}}">
+            <option value="active">Active</option>
+            <option value="notactive">Not Active</option>
+          </select></td>
+          <!-- <td *ngIf="{{userdata.status}} == 'notactive'"><input class="form-control" type="checkbox" value="1" /></td> -->
+          <td><button class="btn btn-success" (click)="edituser(userdata._id)">Edit</button></td>
+          <td><button class="btn btn-danger" (click)="deleteuser(userdata._id)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

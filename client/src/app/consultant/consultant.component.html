@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="jumbotron mt-5">
+    <h1>Home Page</h1>
+    <a class="nav-link forwardbtnwidth" routerLink="/consultantusermanage">Go to User Management page</a>
+    <div class="col-sm-8 mx-auto">
+      <h2 class="text-center">Welcome {{ firstname }} {{ lastname }}</h2>
+    </div>
+    <div class="row somepadding">
+      <div class="col-lg-4 col-md-3 col-sm-2"></div>
+      <div class="col-lg-2 col-md-3 col-sm-4 text-center">
+        <button class="btn btn-success" (click)="gotoinfo()">User's Info</button>
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-4 text-center">
+        <button class="btn btn-success samesize" (click)="gotoletter()">Letter</button>
+      </div>
+      <div class="col-lg-4 col-md-3 col-sm-2"></div>
+    </div>
+  </div>
+</div>

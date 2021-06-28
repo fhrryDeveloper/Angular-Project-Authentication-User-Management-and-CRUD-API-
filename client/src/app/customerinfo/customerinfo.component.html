@@ -1,0 +1,1287 @@
+<div class="container">
+  <div class="jumbotron mt-5">
+    <a class="nav-link backbtnwidth" routerLink="/{{ details?.user_type }}">Go to Home page</a>
+    <div class="col-sm-8 mx-auto">
+      <h2 class="text-center">User's Info</h2>
+    </div>
+    <div class="buttonposit">
+      <button id="createbtn" class="btn btn-success padleft" (click)="createinfo()">Create</button>
+      <button id="editbtn" class="btn btn-warning padleft" (click)="editinfo()">Edit</button>
+      <button class="btn btn-danger padleft" (click)="deleteinfo()">Delete</button>
+    </div>
+    <h3 class="titlespace">Mietobjekt</h3>
+    <hr/>
+    <!-- first column -->
+    <div class="row padtop">
+      <div class="col-lg-1 col-md-1"></div>
+      <div class="col-lg-2 col-md-3 col-sm-12 col-12">
+        In the regions:
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-6 col-6">
+        <select class="form-control" value="{{alldatas.regionselect}}" [(ngModel)]="alldatas.regionselect">
+          <option value="">Please Select</option>
+          <option value="Zurichcity">Zurich city</option>
+          <option value="Bulach">Bulach</option>
+          <option value="Winterthur">Winterthur</option>
+          <option value="Uster">Uster</option>
+          <option value="Pfaffikon">Pfaffikon</option>
+          <option value="Hinwil">Hinwil</option>
+          <option value="miles">miles</option>
+          <option value="Horgen">Horgen</option>
+          <option value="AffolternaAlbis">Affoltern a. Albis</option>
+          <option value="Dietikon">Dietikon</option>
+          <option value="Dielsdorf">Dielsdorf</option>
+          <option value="Andelfingen">Andelfingen</option>
+        </select>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-6 col-6">
+        <input class="form-control" value="{{alldatas.regioninput}}" [(ngModel)]="alldatas.regioninput" />
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-6 col-6">
+        <select class="form-control" value="{{alldatas.partnerregionselect}}" [(ngModel)]="alldatas.partnerregionselect">
+          <option value="">Please Select</option>
+          <option value="Zurichcity">Zurich city</option>
+          <option value="Bulach">Bulach</option>
+          <option value="Winterthur">Winterthur</option>
+          <option value="Uster">Uster</option>
+          <option value="Pfaffikon">Pfaffikon</option>
+          <option value="Hinwil">Hinwil</option>
+          <option value="miles">miles</option>
+          <option value="Horgen">Horgen</option>
+          <option value="AffolternaAlbis">Affoltern a. Albis</option>
+          <option value="Dietikon">Dietikon</option>
+          <option value="Dielsdorf">Dielsdorf</option>
+          <option value="Andelfingen">Andelfingen</option>
+        </select>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-6 col-6">
+        <input class="form-control" value="{{alldatas.partnerregioninput}}" [(ngModel)]="alldatas.partnerregioninput" />
+      </div>
+      <div class="col-lg-1"></div>
+    </div>
+    <!-- second column -->
+    <div class="row padtop">
+      <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+        Number of rooms minimum
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+        <select class="form-control" value="{{alldatas.roomnumberselect}}" [(ngModel)]="alldatas.roomnumberselect">
+          <option value="">Please Select</option>
+          <option value="wg">WG</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+        Rental price maximum(CHF)
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+        <select class="form-control" value="{{alldatas.priceselect}}" [(ngModel)]="alldatas.priceselect">
+          <option value="">Please Select</option>
+          <option value="600">600</option>
+          <option value="1000">1000</option>
+          <option value="1200">1200</option>
+          <option value="1500">1500</option>
+          <option value="2000">2000</option>
+          <option value="2500">2500</option>
+          <option value="3000">3000</option>
+          <option value="3500">3500</option>
+          <option value="4000">4000</option>
+          <option value="5000">5000</option>
+        </select>
+      </div>
+    </div>
+    <!-- third column -->
+    <div class="row padtop">
+      <div class="col-lg-6 col-md-10 col-sm-12 col-12 row">
+        <div class="col-lg-6 col-md-8 col-sm-6 col-6">
+          Can you move in immediately?
+        </div>
+        <div class="col-lg-3 col-md-2 col-sm-3 col-3">
+          <p>
+            <label>
+              <input name="move" (click)="hideDate()" class="padcenright padtext" type="radio" [(checked)]="alldatas.movevalue" />
+              <span>Ja</span>
+            </label>
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-2 col-sm-3 col-3">
+          <p>
+            <label>
+              <input name="move" (click)="showDate()" class="padtext" type="radio" [(checked)]="alldatas.nomovevalue"/>
+              <span>Nein</span>
+            </label>
+          </p>
+        </div>
+      </div>
+      <div style="display: none;" id="movedate" class="col-lg-6 col-md-10 col-sm-12 col-12 row">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+          From when? Date:
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+          <input class="form-control" value="{{alldatas.dateinput}}" [(ngModel)]="alldatas.dateinput" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+          (dd/mm/yyyy)
+        </div>
+      </div>
+    </div>
+    <!-- fourth column -->
+    <div class="row padtop">
+      <div class="col-lg-3 col-md-12 col-sm-12 col-12">
+        What must the apartment have?
+      </div>
+      <div class="col-lg-9 col-md-12 col-sm-12 col-12 row">
+        <div class="col-lg-2 col-md-2 col-sm-6 col-6">
+          <input type="checkbox" class="padtext" value="{{alldatas.valconyvalue}}" [(ngModel)]="alldatas.valconyvalue" />Balcony
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+          <input type="checkbox" class="padtext" value="{{alldatas.petsvalue}}" [(ngModel)]="alldatas.petsvalue" />Pets Allowed
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-6">
+          <input type="checkbox" class="padtext" value="{{alldatas.wheelchairvalue}}" [(ngModel)]="alldatas.wheelchairvalue" />Wheelchair accessible
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+          <input type="checkbox" class="padtext" value="{{alldatas.parkingvalue}}" [(ngModel)]="alldatas.parkingvalue" />parking spot
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-12 row">
+        <div class="col-lg-9 col-md-8 col-sm-6 col-6">
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+          <input type="checkbox" class="padtext" value="{{alldatas.debtvalue}}" [(ngModel)]="alldatas.debtvalue" />No debt enforcement
+        </div>
+      </div>
+    </div>
+    <!-- fifth column -->
+    <div class="row padtop">
+      <div class="col-lg-6 col-md-10 col-sm-12 col-12 row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+          Payment security
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+          <input type="checkbox" class="padtext" [(ngModel)]="alldatas.suretyvalue" />Solidarity / surety
+        </div>
+      </div>
+    </div>
+    <h3 class="titlespace">Mietinteressent/in</h3>
+    <hr/>
+    <!-- first column -->
+    <div class="row padtop">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="row padtop">
+          <div class="col-lg-3 col-md-3"></div>
+          <div class="col-lg-3 col-md-3 col-sm-4 col-6">
+            <p>
+              <label>
+                <input name="group2" (click)="tenantselectman()" [(checked)]="alldatas.tenantmanvalue" class="padcenright padtext" type="radio" />
+                <span>Herr</span>
+              </label>
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-4 col-6">
+            <p>
+              <label>
+                <input name="group2" (click)="tenantselectwomen()" [(checked)]="alldatas.tenantwomenvalue" class="padtext" type="radio" />
+                <span>Frau</span>
+              </label>
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-4"></div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="row padtop">
+          <div class="col-lg-8 col-md-12 col-sm-7 col-6 row">
+            <p>
+              <label>
+                <input name="group3" (click)="selectpartner()" [(checked)]="alldatas.partnervalue" class="padcenright padtext" type="radio" />
+                <span>Ehepartner/in</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="group3" (click)="selectepartner()" [(checked)]="alldatas.epartnervalue" class="padtext" type="radio" />
+                <span>Partner/in</span>
+              </label>
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-12 col-sm-5 col-6 row">
+            <p>
+              <label>
+                <input name="group4" (click)="selectpartnerman()" [(checked)]="alldatas.partnermanvalue" class="padcenright padtext" type="radio" />
+                <span>Herr</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="group4" (click)="selectpartnerwomen()" [(checked)]="alldatas.partnerwomenvalue" class="padtext" type="radio" />
+                <span>Frau</span>
+              </label>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- second column -->
+    <div class="row padtop">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            Family name
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6">
+            <input class="form-control" value="alldatas.familynamevalue" [(ngModel)]="alldatas.familynamevalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            First name
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6">
+            <input class="form-control" value="alldatas.firstnamevalue" [(ngModel)]="alldatas.firstnamevalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            Street
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6">
+            <input class="form-control" value="alldatas.streetvalue" [(ngModel)]="alldatas.streetvalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            Postcode/town
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6">
+            <input class="form-control" value="alldatas.postcodevalue" [(ngModel)]="alldatas.postcodevalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            Don't reside since
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6">
+            <input class="form-control" value="alldatas.residevalue" [(ngModel)]="alldatas.residevalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            Tel. Private/business
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6">
+            <input class="form-control" value="alldatas.privatetelvalue" [(ngModel)]="alldatas.privatetelvalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            Mobile number
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6">
+            <input class="form-control" value="alldatas.mobilenumbervalue" [(ngModel)]="alldatas.mobilenumbervalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            Email
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6">
+            <input class="form-control" value="alldatas.emailvalue" [(ngModel)]="alldatas.emailvalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            Date of birth
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6">
+            <input class="form-control" value="alldatas.birthvalue" [(ngModel)]="alldatas.birthvalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            Hometown/nationality
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6">
+            <input class="form-control" value="alldatas.hometownvalue" [(ngModel)]="alldatas.hometownvalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            Residence permit
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6 row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-6">
+              <p>
+                <label>
+                  <input name="residence1" (click)="selectresidencea()" [(checked)]="alldatas.residenceavalue" class="padtext" type="radio"/>
+                  <span>A</span>
+                </label>
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-6">
+              <p>
+                <label>
+                  <input name="residence1" (click)="selectresidenceb()" [(checked)]="alldatas.residencebvalue" class="padtext" type="radio"/>
+                  <span>B</span>
+                </label>
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-6">
+              <p>
+                <label>
+                  <input name="residence1" (click)="selectresidencec()" [(checked)]="alldatas.residencecvalue" class="padtext" type="radio"/>
+                  <span>C</span>
+                </label>
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-6">
+              <p>
+                <label>
+                  <input name="residence1" (click)="selectresidenced()" [(checked)]="alldatas.residencedvalue" class="padtext" type="radio"/>
+                  <span>F</span>
+                </label>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            civil status
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6">
+            <select class="form-control" value="{{alldatas.civilvalue}}" [(ngModel)]="alldatas.civilvalue">
+              <option value="">Please Select</option>
+              <option value="single">single</option>
+              <option value="married">married</option>
+              <option value="divorced">divorced</option>
+              <option value="cut">cut</option>
+              <option value="registeredpartnership">registered partnership</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            Family name
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6">
+            <input  class="form-control" value="alldatas.partnerfamilynamevalue" [(ngModel)]="alldatas.partnerfamilynamevalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            First name
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6">
+            <input class="form-control" value="alldatas.partnerfirstnamevalue" [(ngModel)]="alldatas.partnerfirstnamevalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            Street
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6">
+            <input class="form-control" value="alldatas.partnerstreetvalue" [(ngModel)]="alldatas.partnerstreetvalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            Postcode/town
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6">
+            <input class="form-control" value="alldatas.partnerpostcodevalue" [(ngModel)]="alldatas.partnerpostcodevalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            Don't reside since
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6">
+            <input class="form-control" value="alldatas.partnerresidevalue" [(ngModel)]="alldatas.partnerresidevalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            Tel. Private/business
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6">
+            <input class="form-control" value="alldatas.partnerprivatetelvalue" [(ngModel)]="alldatas.partnerprivatetelvalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            Mobile number
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6">
+            <input class="form-control" value="alldatas.partnermobilenumbervalue" [(ngModel)]="alldatas.partnermobilenumbervalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            Email
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6">
+            <input class="form-control" value="alldatas.partneremailvalue" [(ngModel)]="alldatas.partneremailvalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            Date of birth
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6">
+            <input class="form-control" value="alldatas.partnerbirthvalue" [(ngModel)]="alldatas.partnerbirthvalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            Hometown/nationality
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6">
+            <input class="form-control" value="alldatas.partnerhometownvalue" [(ngModel)]="alldatas.partnerhometownvalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            Residence permit
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6 row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-6">
+              <p>
+                <label>
+                  <input name="residence2" (click)="partnerselectresidencea()" [(checked)]="alldatas.partnerresidenceavalue" class="padtext" type="radio"/>
+                  <span>A</span>
+                </label>
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-6">
+              <p>
+                <label>
+                  <input name="residence2" (click)="partnerselectresidenceb()" [(checked)]="alldatas.partnerresidencebvalue" class="padtext" type="radio"/>
+                  <span>B</span>
+                </label>
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-6">
+              <p>
+                <label>
+                  <input name="residence2" (click)="partnerselectresidencec()" [(checked)]="alldatas.partnerresidencecvalue" class="padtext" type="radio"/>
+                  <span>C</span>
+                </label>
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-6">
+              <p>
+                <label>
+                  <input name="residence2" (click)="partnerselectresidenced()" [(checked)]="alldatas.partnerresidencedvalue" class="padtext" type="radio"/>
+                  <span>F</span>
+                </label>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-5 col-sm-4 col-6">
+            civil status
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-8 col-6">
+            <select class="form-control" value="alldatas.partnercivilvalue" [(ngModel)]="alldatas.partnercivilvalue">
+              <option value="">Please Select</option>
+              <option value="single">single</option>
+              <option value="married">married</option>
+              <option value="divorced">divorced</option>
+              <option value="cut">cut</option>
+              <option value="registeredpartnership">registered partnership</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3 class="titlespace">Beruf</h3>
+    <hr/>
+    <!-- first column -->
+    <div class="row padtop">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+            Job / activity
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+            <select id="selectid" class="form-control" value="alldatas.jobactivityvalue" [(ngModel)]="alldatas.jobactivityvalue" (change)="changefunc()">
+              <option value="" selected>Please select</option>
+              <option value="employedindefinitely">Employed indefinitely</option>
+              <option value="employedonatemporarybasis">Employed on a temporary basis</option>
+              <option value="housewifehousehusband">Housewife / househusband</option>
+              <option value="lookingforwork">looking for work</option>
+              <option value="ineducation">in education</option>
+              <option value="collegestudent">college student</option>
+              <option value="pensioner">pensioner</option>
+              <option value="selfemployed">Self-employed</option>
+              <option value="socialwelfareoffice">Social welfare office</option>
+            </select>
+          </div>
+        </div>
+        <div style="display: none;" id="firstinputpanel" class="col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Job title
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.jobtitlevalue" [(ngModel)]="alldatas.jobtitlevalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Monthly income net
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.monthlyincomevalue" [(ngModel)]="alldatas.monthlyincomevalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Employer / company
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.employervalue" [(ngModel)]="alldatas.employervalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Contact Person
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.contactvalue" [(ngModel)]="alldatas.contactvalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Phone number
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.phonenumbervalue" [(ngModel)]="alldatas.phonenumbervalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Don't busy since
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.busyvalue" [(ngModel)]="alldatas.busyvalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Employment relationship
+            </div>
+            <div style="padding-right: 0px" class="col-lg-2 col-md-2 col-sm-2 col-2">
+              <p>
+                <label>
+                  <input name="percent" [(checked)]="alldatas.employmentinputvaluefull" (click)="hidepercent()" class="padtext" type="radio"/>
+                  <span>100%</span>
+                </label>
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-3">
+              <p>
+                <label>
+                  <input name="percent" (click)="showpercent()" [(checked)]="alldatas.employmentinputvaluepart" class="padtext" type="radio"/>
+                  <span>Part Time</span>
+                </label>
+              </p>
+            </div>
+            <div style="display: none;" id="manualpercent" class="col-lg-3 col-md-3 col-sm-3 col-3 row">
+              <input class="form-control inputwidth" value="alldatas.employmentinputvalue" [(ngModel)]="alldatas.employmentinputvalue" />%
+            </div>
+          </div>
+        </div>
+        <div style="display: none;" id="fourthinputpanel" class="col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Job title
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.fourthjobtitlevalue" [(ngModel)]="alldatas.fourthjobtitlevalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Monthly income net
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.fourthmonthlyincomevalue" [(ngModel)]="alldatas.fourthmonthlyincomevalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Employer / company
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.fourthemployervalue" [(ngModel)]="alldatas.fourthemployervalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Contact Person
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.fourthcontactvalue" [(ngModel)]="alldatas.fourthcontactvalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Phone number
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.fourthphonenumbervalue" [(ngModel)]="alldatas.fourthphonenumbervalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Don't busy since
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.fourthbusyvalue" [(ngModel)]="alldatas.fourthbusyvalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Employment relationship
+            </div>
+            <div style="padding-right: 0px" class="col-lg-2 col-md-2 col-sm-2 col-2">
+              <p>
+                <label>
+                  <input name="percentfourth" [(checked)]="alldatas.fourthemploymentinputvaluefull" (click)="fourthhidepercent()" class="padtext" type="radio"/>
+                  <span>100%</span>
+                </label>
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-3">
+              <p>
+                <label>
+                  <input name="percentfourth" (click)="fourthshowpercent()" [(checked)]="alldatas.fourthemploymentinputvaluepart" class="padtext" type="radio"/>
+                  <span>Part Time</span>
+                </label>
+              </p>
+            </div>
+            <div style="display: none;" id="fourthmanualpercent" class="col-lg-3 col-md-3 col-sm-3 col-3 row">
+              <input class="form-control inputwidth" value="alldatas.fourthemploymentinputvalue" [(ngModel)]="alldatas.fourthemploymentinputvalue" />%
+            </div>
+          </div>
+        </div>
+        <div style="display: none;" id="secondinputpanel" class="col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Job title
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.secondjobtitlevalue" [(ngModel)]="alldatas.secondjobtitlevalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Monthly income net
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.secondmonthlyincomevalue" [(ngModel)]="alldatas.secondmonthlyincomevalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Your company
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.secondyourcompanyvalue" [(ngModel)]="alldatas.secondyourcompanyvalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Company address
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.secondcompanyaddressvalue" [(ngModel)]="alldatas.secondcompanyaddressvalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Phone number
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.secondphonenumbervalue" [(ngModel)]="alldatas.secondphonenumbervalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Self employed since
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.secondselfvalue" [(ngModel)]="alldatas.secondselfvalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Number of employees
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-3">
+              <input type="number" class="form-control" value="alldatas.secondemployeernumbervalue" [(ngModel)]="alldatas.secondemployeernumbervalue" />
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+              (Only number without text)
+            </div>
+          </div>
+        </div>
+        <div style="display: none;" id="thirdinputpanel" class="col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Monthly income net
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.thirdmonthlyincomevalue" [(ngModel)]="alldatas.thirdmonthlyincomevalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Office / contact person
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.thirdofficevalue" [(ngModel)]="alldatas.thirdofficevalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Phone number
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.thirdphonenumbervalue" [(ngModel)]="alldatas.thirdphonenumbervalue" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+            Job / activity
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+            <select id="partnerselectid" class="form-control" value="alldatas.partnerjobactivityvalue" [(ngModel)]="alldatas.partnerjobactivityvalue" (change)="partnerchangefunc()">
+              <option value="">Please select</option>
+              <option value="employedindefinitely">Employed indefinitely</option>
+              <option value="employedonatemporarybasis">Employed on a temporary basis</option>
+              <option value="housewifehousehusband">Housewife / househusband</option>
+              <option value="lookingforwork">looking for work</option>
+              <option value="ineducation">in education</option>
+              <option value="collegestudent">college student</option>
+              <option value="pensioner">pensioner</option>
+              <option value="selfemployed">Self-employed</option>
+              <option value="socialwelfareoffice">Social welfare office</option>
+            </select>
+          </div>
+        </div>
+        <div style="display: none;" id="partnerfirstinputpanel" class="col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Job title
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.partnerjobtitlevalue" [(ngModel)]="alldatas.partnerjobtitlevalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Monthly income net
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.partnermonthlyincomevalue" [(ngModel)]="alldatas.partnermonthlyincomevalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Employer / company
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.partneremployervalue" [(ngModel)]="alldatas.partneremployervalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Contact Person
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.partnercontactvalue" [(ngModel)]="alldatas.partnercontactvalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Phone number
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.partnerphonenumbervalue" [(ngModel)]="alldatas.partnerphonenumbervalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Don't busy since
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.partnerbusyvalue" [(ngModel)]="alldatas.partnerbusyvalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Employment relationship
+            </div>
+            <div style="padding-right: 0px" class="col-lg-2 col-md-2 col-sm-2 col-2">
+              <p>
+                <label>
+                  <input name="percent1" (click)="hidepercent1()" [(checked)]="alldatas.partneremploymentinputvaluefull" class="padtext" type="radio"/>
+                  <span>100%</span>
+                </label>
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-3">
+              <p>
+                <label>
+                  <input name="percent1" (click)="showpercent1()" [(checked)]="alldatas.partneremploymentinputvaluepart" class="padtext" type="radio"/>
+                  <span>Part Time</span>
+                </label>
+              </p>
+            </div>
+            <div style="display: none;" id="manualpercent1" class="col-lg-3 col-md-3 col-sm-3 col-3 row">
+              <input class="form-control inputwidth" value="alldatas.partneremploymentinputvalue" [(ngModel)]="alldatas.partneremploymentinputvalue" />%
+            </div>
+          </div>
+        </div>
+        <div style="display: none;" id="partnerfourthinputpanel" class="col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Job title
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.partnerfourthjobtitlevalue" [(ngModel)]="alldatas.partnerfourthjobtitlevalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Monthly income net
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.partnerfourthmonthlyincomevalue" [(ngModel)]="alldatas.partnerfourthmonthlyincomevalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Employer / company
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.partnerfourthemployervalue" [(ngModel)]="alldatas.partnerfourthemployervalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Contact Person
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.partnerfourthcontactvalue" [(ngModel)]="alldatas.partnerfourthcontactvalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Phone number
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.partnerfourthphonenumbervalue" [(ngModel)]="alldatas.partnerfourthphonenumbervalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Don't busy since
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.partnerfourthbusyvalue" [(ngModel)]="alldatas.partnerfourthbusyvalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Employment relationship
+            </div>
+            <div style="padding-right: 0px" class="col-lg-2 col-md-2 col-sm-2 col-2">
+              <p>
+                <label>
+                  <input name="fourthpercent1" (click)="fourthhidepercent1()" [(checked)]="alldatas.partnerfourthemploymentinputvaluefull" class="padtext" type="radio"/>
+                  <span>100%</span>
+                </label>
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-3">
+              <p>
+                <label>
+                  <input name="fourthpercent1" (click)="fourthshowpercent1()" [(checked)]="alldatas.partnerfourthemploymentinputvaluepart" class="padtext" type="radio"/>
+                  <span>Part Time</span>
+                </label>
+              </p>
+            </div>
+            <div style="display: none;" id="fourthmanualpercent1" class="col-lg-3 col-md-3 col-sm-3 col-3 row">
+              <input class="form-control inputwidth" value="alldatas.partnerfourthemploymentinputvalue" [(ngModel)]="alldatas.partnerfourthemploymentinputvalue" />%
+            </div>
+          </div>
+        </div>
+        <div style="display: none;" id="partnersecondinputpanel" class="col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Job title
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.partnersecondjobtitlevalue" [(ngModel)]="alldatas.partnersecondjobtitlevalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Monthly income net
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.partnersecondmonthlyincomevalue" [(ngModel)]="alldatas.partnersecondmonthlyincomevalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Your company
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.partnersecondyourcompanyvalue" [(ngModel)]="alldatas.partnersecondyourcompanyvalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Company address
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.partnersecondcompanyaddressvalue" [(ngModel)]="alldatas.partnersecondcompanyaddressvalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Phone number
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.partnersecondphonenumbervalue" [(ngModel)]="alldatas.partnersecondphonenumbervalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Self employed since
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.partnersecondselfvalue" [(ngModel)]="alldatas.partnersecondselfvalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Number of employees
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-3">
+              <input type="number" class="form-control" value="alldatas.partnersecondemployeernumbervalue" [(ngModel)]="alldatas.partnersecondemployeernumbervalue" />
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+              (Only number without text)
+            </div>
+          </div>
+        </div>
+        <div style="display: none;" id="partnerthirdinputpanel" class="col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Monthly income net
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.partnerthirdmonthlyincomevalue" [(ngModel)]="alldatas.partnerthirdmonthlyincomevalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Office / contact person
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.partnerthirdofficevalue" [(ngModel)]="alldatas.partnerthirdofficevalue" />
+            </div>
+          </div>
+          <div class="row padtop">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+              Phone number
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+              <input class="form-control" value="alldatas.partnerthirdphonenumbervalue" [(ngModel)]="alldatas.partnerthirdphonenumbervalue" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3 class="titlespace">Sonstiges</h3>
+    <hr/>
+    <!-- first column -->
+    <div class="row padtop">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+        Reason for the change of residence
+      </div>
+      <div class="col-lg-5 col-md-5 col-sm-5 col-5">
+        <select class="form-control" value="alldatas.reasonselectvalue" [(ngModel)]="alldatas.reasonselectvalue">
+          <option value="">Please select</option>
+          <option value="firstapartment">First apartment</option>
+          <option value="wearenowmovingintoasharedapartment">We are now moving into a shared apartment</option>
+          <option value="currentapartmenttoosmall">Current apartment too small</option>
+          <option value="currentapartmenttooexpensive">Current apartment too expensive</option>
+          <option value="currentapartmenttooloud">Current apartment too loud</option>
+          <option value="currentapartmentnoelevator">Current apartment no elevator</option>
+          <option value="currentapartmentnotbarrierfree">Current apartment not barrier-free</option>
+          <option value="betterlocationequipmentofthisapartment">Better location / equipment of this apartment</option>
+          <option value="rentincreaseofthecurrentapartment">Rent increase of the current apartment</option>
+          <option value="relocationforprofessionalreasons">Relocation for professional reasons</option>
+          <option value="iamsubletnow">I am sublet now</option>
+          <option value="untilnowIhavelivedinasharedapartment">Until now I have lived in a shared apartment</option>
+          <option value="personalreasons">Personal reasons</option>
+          <option value="otherownformulation">Other >> Own formulation >></option>
+        </select>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-3 col-3">
+        <input class="form-control" value="alldatas.reasoninputvalue" [(ngModel)]="alldatas.reasoninputvalue" />
+      </div>
+    </div>
+    <!-- second column -->
+    <div class="row padtop">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="row padtop">
+          <div class="col-lg-5 col-md-4 col-sm-4 col-4">Previous rent</div>
+          <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+            <input class="form-control" value="alldatas.previousrentvalue" [(ngModel)]="alldatas.previousrentvalue" />
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+            <input type="checkbox" class="padtext" value="alldatas.subletvalue" [(ngModel)]="alldatas.subletvalue" /> in sublet?
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-5 col-md-4 col-sm-4 col-4">Number of adults</div>
+          <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+            <select class="form-control" value="alldatas.adultnumbervalue" [(ngModel)]="alldatas.adultnumbervalue">
+              <option value="">Please select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-5 col-md-4 col-sm-4 col-4">Number of children with age</div>
+          <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+            <select class="form-control" value="alldatas.childrennumbervalue" [(ngModel)]="alldatas.childrennumbervalue">
+              <option value="">Please select</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-12 col-sm-12 col-12">Do you have pets?</div>
+          <div class="col-lg-6 col-md-8 col-sm-8 col-8 row">
+            <p class="vehiclecla">
+              <label>
+                <input name="pets" (click)="petsquestionno()" [(checked)]="alldatas.petsquestionnovalue" class="padcenright padtext" type="radio" />
+                <span>Nein</span>
+              </label>
+            </p>
+            <p class="vehiclecla">
+              <label>
+                <input name="pets" (click)="petsquestionyes()" [(checked)]="alldatas.petsquestionyesvalue" class="padtext" type="radio" />
+                <span>Ja, welche</span>
+              </label>
+            </p>
+          </div>
+          <div style="display: none" id="petsinput" class="col-lg-2 col-md-4 col-sm-4 col-4">
+            <input class="form-control" value="alldatas.petsinputvalue" [(ngModel)]="alldatas.petsinputvalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-12 col-sm-12 col-12">Musical instruments</div>
+          <div class="col-lg-6 col-md-8 col-sm-8 col-8 row">
+            <p class="vehiclecla">
+              <label>
+                <input name="musical" (click)="musicalno()" [(checked)]="alldatas.musicalnovalue" class="padcenright padtext" type="radio" />
+                <span>Nein</span>
+              </label>
+            </p>
+            <p class="vehiclecla">
+              <label>
+                <input name="musical" (click)="musicalyes()" [(checked)]="alldatas.musicalyesvalue" class="padtext" type="radio" />
+                <span>Ja, welche</span>
+              </label>
+            </p>
+          </div>
+          <div style="display: none" id="musicsinput" class="col-lg-2 col-md-4 col-sm-4 col-4">
+            <input class="form-control" value="alldatas.musicsinputvalue" [(ngModel)]="alldatas.musicsinputvalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-12 col-sm-12 col-12">Do you have vehicles?</div>
+          <div class="col-lg-8 col-md-12 col-sm-12 col-12 row">
+            <p class="vehiclecla">
+              <label>
+                <input name="vehicles" (click)="vehicleno()" [(checked)]="alldatas.vehiclenovalue" class="padcenright padtext" type="radio" />
+                <span>Nein</span>
+              </label>
+            </p>
+            <p class="vehiclecla">
+              <label>
+                <input name="vehicles" (click)="vehicleyes()" [(checked)]="alldatas.vehicleyesvalue" class="padtext" type="radio" />
+                <span>Ja</span>
+              </label>
+            </p>
+            <p style="display: none" id="vehiclesinput1" class="vehiclecla">
+              <label>
+                <input type="checkbox" value="alldatas.motovalue" [(ngModel)]="alldatas.motovalue" />
+                <span>Motorrad</span>
+              </label>
+            </p>
+            <p style="display: none" id="vehiclesinput2" class="vehiclecla">
+              <label>
+                <input type="checkbox" value="alldatas.carvalue" [(ngModel)]="alldatas.carvalue" />
+                <span>Auto</span>
+              </label>
+            </p>
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-5 col-md-4 col-sm-4 col-4">Current administration</div>
+          <div class="col-lg-7 col-md-8 col-sm-8 col-8">
+            <input class="form-control" value="alldatas.currentvalue" [(ngModel)]="alldatas.currentvalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-5 col-md-4 col-sm-4 col-4">Telephone administration</div>
+          <div class="col-lg-7 col-md-8 col-sm-8 col-8">
+            <input class="form-control" value="alldatas.telephonevalue" [(ngModel)]="alldatas.telephonevalue" />
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-4">Previous rent</div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+            <input class="form-control" value="alldatas.partnerpreviousrentvalue" [(ngModel)]="alldatas.partnerpreviousrentvalue" />
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+            <input type="checkbox" class="padtext" value="alldatas.partnersubletvalue" [(ngModel)]="alldatas.partnersubletvalue" /> in sublet?
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-4">Became attentive by</div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+            <p>
+              <label>
+                <input name="selectbecame" (click)="internetfunc()" [(checked)]="alldatas.internetvalue" class="padtext" type="radio" />
+                <span>Internet site</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="selectbecame" (click)="listingfunc()" [(checked)]="alldatas.listingvalue" class="padtext" type="radio" />
+                <span>Listing</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="selectbecame" (click)="rentalfunc()" [(checked)]="alldatas.rentalvalue" class="padtext" type="radio" />
+                <span>Rental board</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="selectbecame" (click)="othersfunc()" [(checked)]="alldatas.othersvalue" class="padtext" type="radio" />
+                <span>Others</span>
+              </label>
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+            <input class="form-control" value="alldatas.internetinputvalue" [(ngModel)]="alldatas.internetinputvalue" />
+            <input class="form-control toptwospace" value="alldatas.othersinputvalue" [(ngModel)]="alldatas.othersinputvalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-4 col-md-12 col-sm-12 col-12">Do you have vehicles?</div>
+          <div class="col-lg-8 col-md-12 col-sm-12 col-12 row">
+            <p class="vehiclecla">
+              <label>
+                <input name="partnervehicle" (click)="partnervehicleno()" [(checked)]="alldatas.partnervehiclenovalue" class="padcenright padtext" type="radio" />
+                <span>Nein</span>
+              </label>
+            </p>
+            <p class="vehiclecla">
+              <label>
+                <input name="partnervehicle" (click)="partnervehicleyes()" [(checked)]="alldatas.partnervehicleyesvalue" class="padtext" type="radio" />
+                <span>Ja</span>
+              </label>
+            </p>
+            <p style="display: none" id="partnervehiclesinput1" class="vehiclecla">
+              <label>
+                <input type="checkbox" value="alldatas.partnermotovalue" [(ngModel)]="alldatas.partnermotovalue" />
+                <span>Motorrad</span>
+              </label>
+            </p>
+            <p style="display: none" id="partnervehiclesinput2" class="vehiclecla">
+              <label>
+                <input type="checkbox" value="alldatas.partnercarvalue" [(ngModel)]="alldatas.partnercarvalue" />
+                <span>Auto</span>
+              </label>
+            </p>
+          </div>
+        </div>
+        <div class="row padtop padbot">
+          <div class="col-lg-5 col-md-4 col-sm-4 col-4">Current administration</div>
+          <div class="col-lg-7 col-md-8 col-sm-8 col-8">
+            <input class="form-control" value="alldatas.partnercurrentvalue" [(ngModel)]="alldatas.partnercurrentvalue" />
+          </div>
+        </div>
+        <div class="row padtop">
+          <div class="col-lg-5 col-md-4 col-sm-4 col-4">Telephone administration</div>
+          <div class="col-lg-7 col-md-8 col-sm-8 col-8">
+            <input class="form-control" value="alldatas.partnertelephonevalue" [(ngModel)]="alldatas.partnertelephonevalue" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- third column -->
+    <div class="row padtop">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+        Text for name tags
+      </div>
+      <div class="col-lg-8 col-md-6 col-sm-6 col-6">
+        <input class="form-control" value="alldatas.nametagvalue" [(ngModel)]="alldatas.nametagvalue" />
+      </div>
+    </div>
+  </div>
+</div>

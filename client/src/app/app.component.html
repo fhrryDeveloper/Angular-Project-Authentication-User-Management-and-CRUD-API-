@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark headerstyle">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10" aria-controls="navbarsExample10"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
+    <ul class="navbar-nav">
+      <li *ngIf="auth.isLoggedIn()" class="nav-item">
+        <a class="nav-link profileposit" routerLink="/profile">Profile</a>
+      </li>
+      <li *ngIf="auth.isLoggedIn()" class="nav-item">
+        <a class="nav-link logoutposit" routerLink="" (click)="auth.logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+<simple-notifications></simple-notifications>

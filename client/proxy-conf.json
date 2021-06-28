@@ -1,0 +1,14 @@
+{
+  "/users": {
+    "target": "http://localhost:3000",
+    "secure": false
+  },
+  "/infos": {
+    "target": "http://localhost:3000",
+    "secure": false
+  },
+  "/letters": {
+    "target": "http://localhost:3000",
+    "secure": false
+  }
+}

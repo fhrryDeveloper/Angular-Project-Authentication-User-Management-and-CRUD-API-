@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="jumbotron mt-5">
+    <a class="nav-link backbtnwidth" routerLink="/{{ details?.user_type }}">Go to Home page</a>
+    <div class="col-sm-8 mx-auto">
+      <h1 class="text-center">PROFILE</h1>
+    </div>
+    <table class="table col-md-6 mx-auto">
+      <tr>
+        <td>Fist Name</td>
+        <td><input value="{{ firstname }}" [(ngModel)]="firstname" class="form-control" /></td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td><input value="{{ lastname }}" [(ngModel)]="lastname" class="form-control" /></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><input value="{{ emailaddress }}" [(ngModel)]="emailaddress" class="form-control" /></td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td><input type="password" [(ngModel)]="userpass" class="form-control" /></td>
+      </tr>
+    </table>
+    <div class="row">
+      <div class="col-lg-8 col-md-7 col-sm-9"></div>
+      <div class="col-lg-1 col-md-2 col-sm-2">
+        <button class="btn btn-success" (click)="editprofile()">Edit</button>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-1"></div>
+    </div>
+  </div>
+</div>

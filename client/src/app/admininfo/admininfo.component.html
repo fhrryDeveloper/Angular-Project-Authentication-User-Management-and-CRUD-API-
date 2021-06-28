@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="jumbotron mt-5">
+    <a class="nav-link backbtnwidth" routerLink="/{{usertype}}">Go to Home page</a>
+    <div class="col-sm-8 mx-auto">
+      <h1 class="text-center">User's Info</h1>
+    </div>
+    <table class="table col-md-12 mx-auto">
+      <thead>
+        <tr>
+          <td class="tableheader">First Name</td>
+          <td class="tableheader">Last Name</td>
+          <td class="tableheader">Email</td>
+          <td class="tableheader">Manage</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let userdata of allcustomers">
+          <td><input type="text" class="form-control" value="{{userdata.first_name}}" /></td>
+          <td><input type="text" class="form-control" value="{{userdata.last_name}}" /></td>
+          <td><input type="text" class="form-control" value="{{userdata.email}}" /></td>
+          <td><button class="btn btn-success" (click)="manageinfo(userdata._id,userdata.first_name,userdata.last_name,userdata.email)">Manage</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

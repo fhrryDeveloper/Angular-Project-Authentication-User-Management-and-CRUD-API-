@@ -1,0 +1,152 @@
+.textcenter {
+  text-align: center;
+}
+
+.btncenter {
+  text-align: center;
+  display: block !important;
+}
+
+.profileposit {
+  position: absolute;
+  right: 80px;
+  top: 10px;
+}
+
+.logoutposit {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.headerstyle {
+  height: 60px;
+}
+
+.backbtnwidth {
+  width: 200px;
+}
+
+.forwardbtnwidth {
+  width: 100%;
+  text-align: right;
+  margin-top: -35px;
+}
+
+.red {
+  color: red;
+}
+
+.samesize {
+  width: 105px;
+}
+
+.tableheader {
+  border: 0px !important;
+}
+
+.somepadding {
+  padding-top: 30px;
+}
+
+.buttonposit {
+  text-align: right;
+  width: 100%;
+}
+
+.padleft {
+  margin-right: 15px;
+}
+
+.padtop {
+  margin-top: 15px;
+}
+
+.padtext {
+  margin-right: 5px;
+}
+
+.padcenright {
+  margin-left: 13px;
+}
+
+.toptwospace {
+  margin-top: 100px;
+}
+
+.titlespace {
+  padding-top: 50px;
+}
+
+.inputwidth {
+  width: 70% !important;
+  height: 25px !important;
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+.blackborder {
+  border: 1px solid black;
+  margin-bottom: 10px;
+  height: 60px;
+  padding-top: 10px;
+}
+
+.menuchangebtn {
+  width: 100%;
+}
+
+.selectbtn {
+  border: 1px solid #40b0e0 !important;
+}
+
+.selectmenu {
+  background: #40b0e0 !important;
+}
+
+.nopadding {
+  padding: 0px !important;
+}
+
+.textposit {
+  padding-top: 5px;
+}
+
+.vehiclecla {
+  margin-right: 5%;
+}
+
+.padbot {
+  padding-top: 35px;
+}
+
+.angular-editor[_ngcontent-c2] .angular-editor-wrapper[_ngcontent-c2] .angular-editor-textarea[_ngcontent-c2] {
+  outline: none;
+  border: 1px solid black !important;
+}
+
+.textright {
+  text-align: right;
+}
+
+.pflex {
+  display: flex;
+}
+
+.labeltop {
+  margin-top: 0.5rem;
+}
+
+.showblockdisplay {
+  display: block;
+}
+
+.showflexdisplay {
+  display: flex;
+}
+
+.hidedisplay {
+  display: none;
+}

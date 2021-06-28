@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="jumbotron mt-5">
+    <a class="nav-link backbtnwidth" routerLink="/{{ details?.user_type }}">Go to Home page</a>
+    <div class="col-sm-8 mx-auto">
+      <h2 class="text-center">Letter</h2>
+    </div>
+    <table class="table col-md-12 mx-auto">
+      <thead>
+        <tr>
+          <td class="tableheader">First Name</td>
+          <td class="tableheader">Last Name</td>
+          <td class="tableheader">Email</td>
+          <td class="tableheader">Generate</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let userinfo of allcustomerinfos">
+          <td><input id="first_{{userinfo._id}}" type="text" class="form-control" value="{{userinfo.firstname}}" /></td>
+          <td><input id="last_{{userinfo._id}}" type="text" class="form-control" value="{{userinfo.lastname}}" /></td>
+          <td><input id="email_{{userinfo._id}}" type="text" class="form-control" value="{{userinfo.email}}" /></td>
+          <td><button class="btn btn-success" (click)="lettergenerating(userinfo.userid)">Generate</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
